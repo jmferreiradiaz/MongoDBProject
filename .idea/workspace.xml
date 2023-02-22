@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4a6c70e-3123-4809-a3dd-591d8b8971fe" name="Changes" comment="mondongo">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejemploMongo/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejemploMongo/conexion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Conexion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/jmferreira/Desktop/Acceso Datos/MongoDBProject/src/main/java/ejemploMongo",
+    "last_opened_file_path": "C:/Users/jmferreira/Desktop/PSPRO/RegistroYValidacion",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -65,7 +54,7 @@
       <recent name="C:\Users\jmferreira\Desktop\Acceso Datos\MongoDBProject\src\main\java\ejemploMongo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ejemploMongo.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="MongoDBProject" />
@@ -94,8 +83,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ejemploMongo.Main" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ejemploMongo.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -112,8 +101,27 @@
       <workItem from="1676359898788" duration="2817000" />
       <workItem from="1676370489840" duration="16000" />
       <workItem from="1676625851611" duration="1261000" />
-      <workItem from="1676964948780" duration="3553000" />
+      <workItem from="1676964948780" duration="3605000" />
+      <workItem from="1676982078680" duration="417000" />
+      <workItem from="1676982674958" duration="658000" />
+      <workItem from="1676984309017" duration="1028000" />
+      <workItem from="1677059337941" duration="1653000" />
     </task>
+    <task id="LOCAL-00001" summary="mondongo">
+      <created>1676971386395</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676971386395</updated>
+    </task>
+    <task id="LOCAL-00002" summary="mondongo">
+      <created>1676971419467</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676971419467</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

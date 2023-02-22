@@ -16,7 +16,8 @@ public class Main {
 
     private static Conexion conexion = new Conexion();
     public static void main(String[] args) {
-        conexion.conectar(); //hola
+        conexion.conectar();
+        menu();
 
     }
 
@@ -28,20 +29,22 @@ public class Main {
         System.out.println("5. eliminar alumno");
         Scanner sc = new Scanner(System.in);
         int op=sc.nextInt();
+        sc.nextLine();
         switch(op){
             case 1:
                 //conexion.listaAlumnos();break;
             case 2:
-                System.out.println("Nombre del alumno a insertar");
+                System.out.println("Nombre del alumno a insertar:");
                 String nombre = sc.nextLine();
-                System.out.println("Apellidos del alumno a insertar");
+                System.out.println("Apellidos del alumno a insertar:");
                 String apellidos = sc.nextLine();
                 conexion.insertarAlumno(nombre, apellidos);
                 break;
             case 3:
-                System.out.println("Nombre de la asignatura a insertar");
+                System.out.println("Nombre de la asignatura a insertar:");
                 String asignatura = sc.nextLine();
-                conexion.insertarAsignatura(asignatura);break;
+                conexion.insertarAsignatura(asignatura);
+                break;
             case 4:
                 //conexion.setAsignatura("pepe","Lengua");break;
             case 5:
