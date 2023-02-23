@@ -88,4 +88,14 @@ public class Conexion {
     public void borrar(){
 
     }
+
+    public void setAsignatura(String nombre,String asignatura){
+        MongoCollection<Document> lista = database.getCollection("Alumnos");
+        MongoCollection<Document> asig = database.getCollection("Asignaturas");
+        Document doc=new Document("nombre",nombre); // Criterio de búsqueda
+        Document a = new Document("nombre",asignatura); // Criterio de búsqueda
+        Document asigno = new Document("asignatura", asig.find(a).first().getObjectId("_id"));
+        Document update = new Document("$set",asigno );
+        lista.findOneAndUpdate(doc, update);
+    }
 }
