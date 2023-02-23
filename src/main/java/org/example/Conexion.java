@@ -1,21 +1,16 @@
 package org.example;
 
 import com.mongodb.*;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
 import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 
 public class Conexion {
     static MongoDatabase database;
-    public static void main(String[] args) {
-
-    }
-
 
     public static void conectar(){
         ConnectionString connectionString = new ConnectionString("mongodb+srv://jmferreira:jmferdia623d@cluster0.bpjzscd.mongodb.net/?retryWrites=true&w=majority");
@@ -41,7 +36,7 @@ public class Conexion {
 
     }
 
-    public static void modificar(String antes, String despues){
+    public static void modificarAlumno(String antes, String despues){
         Document query = new Document().append("nombre", antes);
         Bson updates = Updates.combine(
                 Updates.set("nombre", despues),
@@ -57,7 +52,40 @@ public class Conexion {
         }
     }
 
-    public void deleteAll(){
+    public void listaAlumnos(){
+        MongoCollection<Document> lista = database.getCollection("Alumnos");
+        MongoCursor<Document> res=lista.find().iterator();
+        MongoCollection<Document> asig = database.getCollection("Asignaturas");
+        Document a,next;
+        String nombreAsignatura;
+        while(res.hasNext()){
+            next = res.next();
+            System.out.print(next.getString("nombre")+" ");
+            ObjectId buscaAsig = next.getObjectId("asignatura");
+            a = new Document("_id",buscaAsig); // Criterio de búsqueda
+            Document matriculada = asig.find(a).first();
+            if(matriculada!=null) {
+                nombreAsignatura = matriculada.getString("nombre");
+                System.out.print(nombreAsignatura);
+            }else{
+                System.out.print("No tiene asignatura matriculada");
+            }
+            System.out.println("");
+        }
+    }
+
+    public void listaAsignaturas(){
+        MongoCollection<Document> asignaturas = database.getCollection("Asignaturas");
+        MongoCursor<Document> res = asignaturas.find().iterator();
+        Document asig;
+        while(res.hasNext()){
+            asig = res.next();
+            System.out.print(asig.getString("nombre")+" ");
+            System.out.println("");
+        }
+    }
+
+    public void borrar(){
 
     }
 }
