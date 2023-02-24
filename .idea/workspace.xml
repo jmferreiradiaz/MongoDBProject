@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f4a6c70e-3123-4809-a3dd-591d8b8971fe" name="Changes" comment="listar asignaturas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ejemploMongo/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ejemploMongo/conexion.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Conexion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
@@ -109,7 +111,8 @@
       <workItem from="1677059337941" duration="1688000" />
       <workItem from="1677137359374" duration="2557000" />
       <workItem from="1677142522772" duration="1669000" />
-      <workItem from="1677148919920" duration="2250000" />
+      <workItem from="1677148919920" duration="2282000" />
+      <workItem from="1677230843755" duration="7758000" />
     </task>
     <task id="LOCAL-00001" summary="mondongo">
       <created>1676971386395</created>
@@ -139,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677143687153</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="listar asignaturas">
+      <created>1677156116307</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156116307</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

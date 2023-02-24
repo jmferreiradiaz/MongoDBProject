@@ -4,14 +4,20 @@ import com.mongodb.*;
 import com.mongodb.client.*;
 import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.model.Updates;
+import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
+import java.util.Scanner;
+
 public class Conexion {
     static MongoDatabase database;
 
+    /***
+     * Conecta con la base de datos de mongodb
+     */
     public static void conectar(){
         ConnectionString connectionString = new ConnectionString("mongodb+srv://jmferreira:jmferdia623d@cluster0.bpjzscd.mongodb.net/?retryWrites=true&w=majority");
         MongoClientSettings settings = MongoClientSettings.builder()
@@ -24,18 +30,32 @@ public class Conexion {
         database = mongoClient.getDatabase("Prueba");
     }
 
+    /***
+     * Inserta un alumno con el nombre y los apellidos pasados como parámetros
+     * @param nombre
+     * @param apellidos
+     */
     public static void insertarAlumno(String nombre, String apellidos){
         database.getCollection("Alumnos").insertOne(new Document()
                 .append("nombre", nombre)
                 .append("apellidos", apellidos));
     }
 
+    /**
+     * Inserta una asignatura con el nombre pasado como parámetro
+     * @param asignatura
+     */
     public static void insertarAsignatura(String asignatura){
         database.getCollection("Asignaturas").insertOne(new Document()
                 .append("nombre", asignatura));
 
     }
 
+    /***
+     * Busca un alumno y modifica su nombre.
+     * @param antes nombre del alumno para buscar
+     * @param despues nuevo nombre que actualizaremos al alumno
+     */
     public static void modificarAlumno(String antes, String despues){
         Document query = new Document().append("nombre", antes);
         Bson updates = Updates.combine(
@@ -52,6 +72,9 @@ public class Conexion {
         }
     }
 
+    /***
+     * Recoge la colección de alumnos y la imprime en la consola
+     */
     public void listaAlumnos(){
         MongoCollection<Document> lista = database.getCollection("Alumnos");
         MongoCursor<Document> res=lista.find().iterator();
@@ -74,6 +97,9 @@ public class Conexion {
         }
     }
 
+    /***
+     * Recoge la colección de asignaturas y la imprime en la consola
+     */
     public void listaAsignaturas(){
         MongoCollection<Document> asignaturas = database.getCollection("Asignaturas");
         MongoCursor<Document> res = asignaturas.find().iterator();
@@ -85,11 +111,32 @@ public class Conexion {
         }
     }
 
-    public void borrar(){
+    /***
+     * Elimina un alumno de la colección
+     * @param nombre para buscar al alumno a eliminar
+     */
+    public void eliminarAlumno(String nombre) {
 
+        MongoCollection<Document> alumnos = database.getCollection("Alumnos");
+        Document doc=new Document("nombre",nombre); // Criterio de búsqueda
+        try{
+            DeleteResult res=alumnos.deleteMany(doc);
+            if(res.getDeletedCount()>0)
+                System.out.println("nombre " + nombre + " ha sido eliminado correctamente: " + res.getDeletedCount());
+            else
+                System.out.println();
+
+        }catch (Exception e){
+            System.out.println("No se ha podido eliminar al alumno "+nombre);
+        }
     }
 
-    public void setAsignatura(String nombre,String asignatura){
+    /***
+     * Asigna una asignatura a un alumno
+     * @param nombre para buscar alumno
+     * @param asignatura de la asignatura
+     */
+    public void asignarAsignatura(String nombre,String asignatura){
         MongoCollection<Document> lista = database.getCollection("Alumnos");
         MongoCollection<Document> asig = database.getCollection("Asignaturas");
         Document doc=new Document("nombre",nombre); // Criterio de búsqueda
